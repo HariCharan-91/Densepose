@@ -51,9 +51,9 @@ class DensePoseMaskedColormapResultsVisualizer(DensePoseResultsVisualizer):
         self,
         data_extractor,
         segm_extractor,
-        inplace=True,
+        inplace=False,
         cmap=cv2.COLORMAP_PARULA,
-        alpha=0.7,
+        alpha=1,
         val_scale=1.0,
         **kwargs,
     ):
@@ -319,7 +319,7 @@ except ModuleNotFoundError:
 
 
 class DensePoseResultsFineSegmentationVisualizer(DensePoseMaskedColormapResultsVisualizer):
-    def __init__(self, inplace=True, cmap=cv2.COLORMAP_PARULA, alpha=0.7, **kwargs):
+    def __init__(self, inplace=False, cmap=cv2.COLORMAP_PARULA, alpha=1, **kwargs):
         super(DensePoseResultsFineSegmentationVisualizer, self).__init__(
             _extract_i_from_iuvarr,
             _extract_i_from_iuvarr,
@@ -332,7 +332,7 @@ class DensePoseResultsFineSegmentationVisualizer(DensePoseMaskedColormapResultsV
 
 
 class DensePoseResultsUVisualizer(DensePoseMaskedColormapResultsVisualizer):
-    def __init__(self, inplace=True, cmap=cv2.COLORMAP_PARULA, alpha=0.7, **kwargs):
+    def __init__(self, inplace=False, cmap=cv2.COLORMAP_PARULA, alpha=1, **kwargs):
         super(DensePoseResultsUVisualizer, self).__init__(
             _extract_u_from_iuvarr,
             _extract_i_from_iuvarr,
@@ -345,7 +345,7 @@ class DensePoseResultsUVisualizer(DensePoseMaskedColormapResultsVisualizer):
 
 
 class DensePoseResultsVVisualizer(DensePoseMaskedColormapResultsVisualizer):
-    def __init__(self, inplace=True, cmap=cv2.COLORMAP_PARULA, alpha=0.7, **kwargs):
+    def __init__(self, inplace=False, cmap=cv2.COLORMAP_PARULA, alpha=1, **kwargs):
         super(DensePoseResultsVVisualizer, self).__init__(
             _extract_v_from_iuvarr,
             _extract_i_from_iuvarr,
